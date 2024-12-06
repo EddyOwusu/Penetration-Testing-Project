@@ -17,7 +17,7 @@ Reconnaissance: Scanned open ports and identified services running on the target
 Exploitation: Successfully exploited a vulnerability in vsftpd 2.3.4 to gain shell access using Metasploit.<br>
 ![exploit with metasploit](exploit.png)
 Post-Exploitation: Extracted password hashes from /etc/shadow and initiated password cracking using John the Ripper.<br>
-![password](passwordxtrat)
+![password](passwordxtrat.png)
 
 # Technologies Used
 
