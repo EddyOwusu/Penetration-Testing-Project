@@ -12,7 +12,7 @@ Target Information:
 This project demonstrates a full penetration testing workflow conducted on the intentionally vulnerable Metasploitable 2 virtual machine. The project covers reconnaissance, exploitation, and post-exploitation steps, showcasing practical skills in vulnerability identification and exploitation.
 <br><b>Current Progress:</b><br>
 Reconnaissance: Scanned open ports and identified services running on the target using nmap.<br>
-![nmap scan](nmap_scan.png)
+![nmap scan](Nmap_scan.png)
 Exploitation: Successfully exploited a vulnerability in vsftpd 2.3.4 to gain shell access using Metasploit.
 Post-Exploitation: Extracted password hashes from /etc/shadow and initiated password cracking using John the Ripper.
 
