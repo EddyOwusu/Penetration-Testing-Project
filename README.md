@@ -20,7 +20,7 @@ Post-Exploitation: Extracted password hashes from /etc/shadow and initiated pass
 ![password](passwordxtrat.png)
 
 # Technologies Used
-
+Hyper-V Manager, Virtual box, Linux, Nmap, Metasploit, John the ripper, 
 # Steps or Features 
 
 # Sample Output 
