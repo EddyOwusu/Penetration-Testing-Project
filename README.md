@@ -1,6 +1,6 @@
 # Penetration-Testing-Project
 Objective:
-To perform a penetration test on the target system, identify vulnerabilities, exploit them, and document the process for learning and portfolio purposes.
+To perform a penetration test on the target system, identify vulnerabilities, exploit them, and document the process for learning purposes.
 
 Target Information:
 
